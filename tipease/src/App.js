@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Logout from "./components/Logout";
+// import Logout from "./components/Logout";
 import NavBar from "./components/NavBar";
 import Welcome from "./components/Welcome";
 import SWRegister from './components/SWRegister';
@@ -17,7 +17,7 @@ function App() {
         <Route exact path="/consumer" component={ConsumerRegister} />
       </Switch>
       </Router>
-     <Logout />
+     {/* <Logout /> */}
    </div>
   );
 }
