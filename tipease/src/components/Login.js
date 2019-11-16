@@ -82,16 +82,4 @@ const LoginForm = styled.form`
   margin-top: 5%;
 `;
 
-const Logo = styled.img`
-  width: 150px;
-  margin-left: 50px;
-  padding: 20px;
-`;
-const LogoAgain = styled.img`
-  width: 200px;
-  height: 75px;
-  margin-top: 60px;
-  margin-left: 10px;
-`;
-
 export default LogIn;
