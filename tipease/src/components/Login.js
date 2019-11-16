@@ -27,7 +27,7 @@ function LogIn() {
   };
   return (
     <LoginDiv>
-      <h1>Login</h1>
+      <LoginHeader>Login</LoginHeader>
       <LoginForm onSubmit={onSubmit}>
         <LoginInput
           type="text"
@@ -55,7 +55,11 @@ const LoginDiv = styled.div`
   background-color: #00cccc;
   color: white;
   padding: 1%;
+  height: 300px
   box-shadow: 3px 4px #f2f2f2;
+`;
+const LoginHeader = styled.h1`
+  margin-top: 10%;
 `;
 const LoginInput = styled.input`
   height: 25px;
@@ -75,6 +79,7 @@ const LoginButton = styled.button`
 const LoginForm = styled.form`
   display: flex;
   flex-flow: column nowrap;
+  margin-top: 5%;
 `;
 
 const Logo = styled.img`
