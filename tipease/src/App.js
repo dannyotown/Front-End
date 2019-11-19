@@ -6,6 +6,7 @@ import NavBar from "./components/NavBar";
 import Welcome from "./components/Welcome";
 import SWRegister from "./components/SWRegister";
 import ConsumerRegister from "./components/ConsumerRegister";
+import ProtectedRoute from "./components/ProtectedRoute/ProtectedRoute";
 
 function App() {
   return (
@@ -21,8 +22,8 @@ function App() {
               return <Login {...props} />;
             }}
           />
-          <Route exact path="/service" component={SWRegister} />
-          <Route exact path="/consumer" component={ConsumerRegister} />
+          <ProtectedRoute exact path="/service" component={SWRegister} />
+          <ProtectedRoute exact path="/consumer" component={ConsumerRegister} />
         </Switch>
       </Router>
       <Logout />
