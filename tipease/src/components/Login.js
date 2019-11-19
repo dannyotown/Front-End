@@ -1,10 +1,10 @@
 //dtown
 
 import React, { useState } from "react";
-import axios from "axios";
 import styled from "styled-components";
+import api from "../utils/api";
 
-function LogIn() {
+function LogIn(props) {
   const [getLogin, setLogin] = useState({
     username: "",
     password: ""
@@ -20,9 +20,12 @@ function LogIn() {
 
   const onSubmit = e => {
     e.preventDefault();
-    axios
-      .post("https://tipsease-msm.herokuapp.com/api/customers/login", getLogin)
-      .then(response => console.log(response))
+    api()
+      .post("api/customers/login", getLogin)
+      .then(response => {
+        window.localStorage.setItem("key", response.data.token);
+        props.history.push("/");
+      })
       .catch(error => console.log(error));
   };
   return (
