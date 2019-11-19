@@ -1,27 +1,33 @@
-import React from 'react';
+import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Logout from "./components/Logout";
+import Login from "./components/Login";
 import NavBar from "./components/NavBar";
 import Welcome from "./components/Welcome";
-import SWRegister from './components/SWRegister';
-import ConsumerRegister from './components/ConsumerRegister';
+import SWRegister from "./components/SWRegister";
+import ConsumerRegister from "./components/ConsumerRegister";
 
 function App() {
   return (
-   <div>
-     <NavBar />
-     <Router>
-       <Switch>
-        <Route exact path="/" component={Welcome} />
-        <Route exact path="/service" component={SWRegister} />
-        <Route exact path="/consumer" component={ConsumerRegister} />
-      </Switch>
+    <div>
+      <NavBar />
+      <Router>
+        <Switch>
+          <Route exact path="/" component={Welcome} />
+          <Route
+            exact
+            path="/login"
+            render={props => {
+              return <Login {...props} />;
+            }}
+          />
+          <Route exact path="/service" component={SWRegister} />
+          <Route exact path="/consumer" component={ConsumerRegister} />
+        </Switch>
       </Router>
-     <Logout />
-   </div>
+      <Logout />
+    </div>
   );
 }
 
 export default App;
-
-
