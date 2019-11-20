@@ -1,68 +1,39 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Front-End
+Product Vision Document:
 
-## Available Scripts
+Proposal
 
-In the project directory, you can run:
+What problem does your app solve? Providing a platform for service works to provide tips directly to there workers.
 
-### `yarn start`
+Be as specific as possible; how does your app solve the problem? Offers easy way to tip service workers directly. .
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+What is the mission statement? Service workers need a way to collect tips directly, rather than through their employers. This app will allow payment processing directly to service workers as a tip.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+Features
 
-### `yarn test`
+What features are required for your minimum viable product? -Login page -Sign in -Splash page -Nav Bar -Service workers selection page
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+What features may you wish to put in a future release? -Location feature -History feature -Rating System
 
-### `yarn build`
+What do the top 3 similar apps do for their users? -Yelp -Angies List -Tipary (tipary.com) Frameworks - Libraries
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+What 3rd party frameworks/libraries are you considering using? -Greensock -Material UI -Bootstrap -Styled Components -Axios -YUP -Formik
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+Do APIs require you to contact its maintainer to gain access? No
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Are you required to pay to use the API? No
 
-### `yarn eject`
+Have you considered using Apple Frameworks? (MapKit, Healthkit, ARKit?) Web Application (No)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+-Target Audience
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Who is your target audience? Be specific.
+Kitchen Servers Service workers
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+What feedback have you gotten from potential users? No user feedback
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Have you validated the problem and your solution with your target audience? How? Researched restaurant service worker feedback.
 
-## Learn More
+Research
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Research thoroughly before writing a single line of code. Solidify the features of your app conceptually before implementation. Spend the weekend researching so you can hit the ground running on Monday.
