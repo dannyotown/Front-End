@@ -8,6 +8,7 @@ import SWRegister from "./components/SWRegister";
 import ConsumerRegister from "./components/ConsumerRegister";
 import ProtectedRoute from "./components/ProtectedRoute/ProtectedRoute";
 import { getToken } from "./utils/api";
+import ServiceHome from "./components/ServiceHome";
 
 function App() {
   const loggedInOrOut = getToken();
@@ -26,6 +27,7 @@ function App() {
           />
           <ProtectedRoute exact path="/service" component={SWRegister} />
           <ProtectedRoute exact path="/consumer" component={ConsumerRegister} />
+          <ProtectedRoute exact path="/service/home" component={ServiceHome} />
         </Switch>
       </Router>
       <Logout />
