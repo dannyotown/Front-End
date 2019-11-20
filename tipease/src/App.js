@@ -7,11 +7,13 @@ import Welcome from "./components/Welcome";
 import SWRegister from "./components/SWRegister";
 import ConsumerRegister from "./components/ConsumerRegister";
 import ProtectedRoute from "./components/ProtectedRoute/ProtectedRoute";
+import { getToken } from "./utils/api";
 
 function App() {
+  const loggedInOrOut = getToken();
   return (
     <div>
-      <NavBar />
+      <NavBar loggedInOrOut={loggedInOrOut} />
       <Router>
         <Switch>
           <Route exact path="/" component={Welcome} />
