@@ -15,7 +15,7 @@ export default function NavBar(props) {
                     <LogoAgain src="logo2.png"></LogoAgain>
                         <Navvy>
                             <Links href="/">Home</Links>
-                            <Links href="/">About</Links>
+                            <Links href="/about">About</Links>
                             <Links href="/">FAQ's</Links>
                         </Navvy>
                 </Nav>
