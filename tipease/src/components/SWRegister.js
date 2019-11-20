@@ -45,6 +45,7 @@ export default function SWRegister() {
                     placeholder="company name"
                     name="company" 
                 />
+                <button>Submit</button>
             </form>
             <a href="/">Already Have an Account?</a>
         </Box>

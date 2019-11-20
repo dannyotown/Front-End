@@ -1,15 +1,15 @@
 import styled from "styled-components";
 
 const Logo = styled.img `
-    width: 150px;
-    margin-left: 50px;
+    width: auto;
+    height: 125px;
+    margin-left: 30px;
     padding: 20px;
 `
 const LogoAgain = styled.img `
-    width: 200px;
+    width: auto;
     height: 75px;
-    margin-top: 60px;
-    margin-left: 10px;
+    margin-top: 50px;
 `
 
 const Nav = styled.div `
@@ -19,14 +19,15 @@ const Nav = styled.div `
     margin: 0 auto;
     margin-top: 30px;
     background-color: white;
+    justify-content: space-around;
 `
 
 const Navvy = styled.div `
-    width: 40%;
+    width: 43%;
     display: flex;
     justify-content: space-around;
     margin: 0 auto;
-    padding-top: 80px;
+    padding-top: 75px;
 `
 
 const Links = styled.a `
