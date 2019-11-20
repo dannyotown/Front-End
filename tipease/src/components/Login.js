@@ -38,6 +38,7 @@ function LogIn(props) {
           value={getLogin.username}
           onChange={onChangeHandle}
           placeholder="Username"
+          autoComplete="on"
         />
         <LoginInput
           type="password"
@@ -45,6 +46,7 @@ function LogIn(props) {
           value={getLogin.password}
           onChange={onChangeHandle}
           placeholder="Password"
+          autoComplete="on"
         />
         <LoginButton type="submit">Log In</LoginButton>
       </LoginForm>

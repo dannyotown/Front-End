@@ -4,8 +4,10 @@ import React from "react";
 import { BrowserRouter as Router } from "react-router-dom";
 import { Nav, Links, Logo, LogoAgain, Navvy } from "../styling/NavStyling";
 
-export default function NavBar() {
-    return (
+export default function NavBar(props) {
+  return (
+    <div>
+      <Router>
         <div>
             <Router>
                 <Nav>
@@ -19,5 +21,7 @@ export default function NavBar() {
                 </Nav>
             </Router>
         </div>
-    )
+      </Router>
+    </div>
+  );
 }

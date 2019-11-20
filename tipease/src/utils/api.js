@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export function getToken() {
-  return localStorage.getItem("item");
+  return localStorage.getItem("key");
 }
 export default function() {
   return axios.create({
