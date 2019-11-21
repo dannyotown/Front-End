@@ -28,15 +28,11 @@ export default function Modal({
     });
   };
   function addBalance(tip, initial) {
-    console.log(parseInt(tip.balance));
-    console.log(initial.balance, "init");
     return parseInt(initial.balance) + parseInt(tip.balance);
   }
   const submitHandler = e => {
     e.preventDefault();
-    console.log(user);
-    let TipAmount = document.getElementById("TipAmount").value;
-    if (Math.sign(TipAmount) === -1) {
+    if (Math.sign(parseInt(tip.balance)) === -1) {
       alert("Tip Cannot Be A Negative Number");
       setTip({
         balance: ""
@@ -44,7 +40,7 @@ export default function Modal({
     } else {
       api()
         .put(`/api/customers/${worker.id}/tip`, user)
-        .then(() => {
+        .then(res => {
           api()
             .get("/api/serviceworker/")
             .then(response => setServiceWorkers(response.data))
