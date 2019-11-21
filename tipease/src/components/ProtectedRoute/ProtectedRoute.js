@@ -7,7 +7,7 @@ function ProtectedRoute(props) {
     <Route
       {...rest}
       render={renderProps => {
-        if (localStorage.getItem("item")) {
+        if (localStorage.getItem("key")) {
           return <Component {...renderProps} />;
         } else {
           return <Redirect to="/login" />;
