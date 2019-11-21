@@ -8,29 +8,42 @@ export default function Modal({
   setServiceWorkers
 }) {
   const showHideClassName = show ? "modal display-block" : "modal display-none";
-  const [getTip, setTip] = useState({
+  const [user, setUser] = useState({
     username: worker.username,
     company: worker.company,
+    balance: worker.balance
+  });
+  const [tip, setTip] = useState({
     balance: ""
   });
   const changeHandler = e => {
     setTip({
-      ...getTip,
       [e.target.name]: e.target.value
     });
   };
+  const blurHandle = e => {
+    setUser({
+      ...user,
+      balance: addBalance(tip, user)
+    });
+  };
+  function addBalance(tip, initial) {
+    console.log(parseInt(tip.balance));
+    console.log(initial.balance, "init");
+    return parseInt(initial.balance) + parseInt(tip.balance);
+  }
   const submitHandler = e => {
     e.preventDefault();
+    console.log(user);
     let TipAmount = document.getElementById("TipAmount").value;
-    if (TipAmount < worker.balance) {
-      alert("Tip has to be more than current Balance");
+    if (Math.sign(TipAmount) === -1) {
+      alert("Tip Cannot Be A Negative Number");
       setTip({
-        ...getTip,
         balance: ""
       });
     } else {
       api()
-        .put(`/api/customers/${worker.id}/tip`, getTip)
+        .put(`/api/customers/${worker.id}/tip`, user)
         .then(() => {
           api()
             .get("/api/serviceworker/")
@@ -38,7 +51,6 @@ export default function Modal({
             .catch(err => console.log(err));
           alert(`Tip Added for ${worker.FirstName} ${worker.LastName}!`);
           setTip({
-            ...getTip,
             balance: ""
           });
         })
@@ -56,8 +68,9 @@ export default function Modal({
               id="TipAmount"
               onChange={changeHandler}
               name="balance"
-              value={getTip.balance}
+              value={tip.balance}
               placeholder="$ Tip Amount"
+              onBlur={blurHandle}
             />
             <button className="ModalUpdate" onClick={handleClose}>
               Add Tip
