@@ -13,11 +13,9 @@ export default function Welcome() {
             <Link to="/consumer">
                 <Buttons>Customer</Buttons>
             </Link>
-            <a href="/login">Customer Login here</a>
             <Link to="/service" >
                 <Buttons>Servicer</Buttons>
             </Link>
-            <a href="/swlogin">Servicer Login here</a>
         </Splash>
     )
 }

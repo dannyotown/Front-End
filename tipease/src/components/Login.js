@@ -52,6 +52,7 @@ function LogIn(props) {
           autoComplete="on"
         />
         <LoginButton type="submit">Log In</LoginButton>
+        <LinkA href="/consumer">Create an Account</LinkA>
       </LoginForm>
     </LoginDiv>
   );
@@ -89,5 +90,7 @@ const LoginForm = styled.form`
   flex-flow: column nowrap;
   margin-top: 5%;
 `;
-
+const LinkA = styled.a`
+  margin: 0 auto;
+`;
 export default LogIn;

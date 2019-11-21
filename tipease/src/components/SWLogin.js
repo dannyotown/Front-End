@@ -50,6 +50,7 @@ function SWLogin(props) {
           placeholder="Password"
         />
         <LoginButton type="submit">Log In</LoginButton>
+        <LinkA href="/service">Create an Account</LinkA>
       </LoginForm>
     </LoginDiv>
   );
@@ -86,6 +87,9 @@ const LoginForm = styled.form`
   display: flex;
   flex-flow: column nowrap;
   margin-top: 5%;
+`;
+const LinkA = styled.a`
+  margin: 0 auto;
 `;
 
 export default SWLogin;

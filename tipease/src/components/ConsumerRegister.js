@@ -2,7 +2,7 @@
 
 import React from "react";
 import api from "../utils/api";
-import { Box, Fields } from "../styling/SWReg";
+import { Box, Fields, RegButtons } from "../styling/RegisterStyling";
 
 export default function ConsumerRegister(props) {
 
@@ -71,7 +71,7 @@ const [form, setForm] = React.useState({ username: "", password: "", firstname: 
                     onChange={handleChanges}
                     value={form.email}
                 />
-                <button>Submit</button>
+                <RegButtons>Submit</RegButtons>
             </form>
             <a href="/login">Already Have an Account?</a>
         </Box>

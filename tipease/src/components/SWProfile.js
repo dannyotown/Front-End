@@ -1,15 +1,16 @@
 import React from "react";
 import Logout from "../components/Logout";
+import { ProfileCard } from "../styling/ProfileStyling";
 
-export default function SWProfile() {
+export default function Profile() {
 
     return (
-        <div>
-            <h1>My Servicer Profile</h1>
+        <ProfileCard>
+            <h1>My Service Profile</h1>
             <div>
                 Welcome Service Worker
             </div>
       <Logout />
-      </div>
+      </ProfileCard>
     );
 }
