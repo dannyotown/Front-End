@@ -1,13 +1,13 @@
-//dtown
+//JaxAtwood
 
 import React, { useState } from "react";
 import styled from "styled-components";
 import api from "../utils/api";
 
-function LogIn(props) {
+function SWLogin(props) {
   const [getLogin, setLogin] = useState({
     username: "",
-    password: ""
+    password: "",
   });
 
   const onChangeHandle = e => {
@@ -21,19 +21,19 @@ function LogIn(props) {
   const onSubmit = e => {
     e.preventDefault();
     api()
-      .post("api/customers/login", getLogin)
+      .post("api/serviceworker/login", getLogin)
       .then(response => {
         window.localStorage.setItem("key", response.data.token);
-        props.history.push("/profile");
+        props.history.push("/swprofile");
       })
       .catch(error => {
-        console.log("HERE", error)
+        console.log(error)
         alert("Incorrect Login Credentials")
       });
   };
   return (
     <LoginDiv>
-      <LoginHeader>Login</LoginHeader>
+      <LoginHeader>SW Login</LoginHeader>
       <LoginForm onSubmit={onSubmit}>
         <LoginInput
           type="text"
@@ -88,4 +88,4 @@ const LoginForm = styled.form`
   margin-top: 5%;
 `;
 
-export default LogIn;
+export default SWLogin;
