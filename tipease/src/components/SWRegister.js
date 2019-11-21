@@ -2,7 +2,7 @@
 
 import React from "react";
 import api from "../utils/api";
-import { Box, Fields } from "../styling/SWReg";
+import { Box, Fields, RegButtons } from "../styling/RegisterStyling";
 
 export default function SWRegister(props) {
 
@@ -103,7 +103,7 @@ const swlogin = e => {
                     onChange={handleChanges}
                     value={form.YearsAtCompany}
                 />
-                <button>Submit</button>
+                <RegButtons>Submit</RegButtons>
             </form>
             <a href="/swlogin">Already Have an Account?</a>
         </Box>
