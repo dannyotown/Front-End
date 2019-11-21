@@ -1,10 +1,8 @@
 //JaxAtwood
-//NEEDS VALUES, HANDLE CHANGES, AXIOS, PROPS, USESTATE
 
 import React from "react";
 import api from "../utils/api";
 import { Box, Fields } from "../styling/SWReg";
-
 
 export default function ConsumerRegister(props) {
 
@@ -75,7 +73,7 @@ const [form, setForm] = React.useState({ username: "", password: "", firstname: 
                 />
                 <button>Submit</button>
             </form>
-            <a href="/">Already Have an Account?</a>
+            <a href="/login">Already Have an Account?</a>
         </Box>
     )
 }
