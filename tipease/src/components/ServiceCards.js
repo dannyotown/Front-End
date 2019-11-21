@@ -1,23 +1,44 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
+import Modal from "./Modal";
 
-export default function ServiceCards({ worker }) {
-  console.log(worker);
+export default function ServiceCards({ worker, setServiceWorkers }) {
+  const [getModal, setModal] = useState(false);
+
+  const showModal = () => {
+    setModal(true);
+  };
+
+  const hideModal = () => {
+    setModal(false);
+  };
+
   return (
-    <ServiceCard>
-      <ServiceCardHeader>
-        {worker.FirstName} {worker.LastName}
-      </ServiceCardHeader>
-      <ServiceCardInfo>
-        <ServiceInfo>Company: {worker.company}</ServiceInfo>
-        <ServiceInfo>Years at Company: {worker.YearsAtCompany}</ServiceInfo>
-        <ServiceInfo>Email: {worker.email}</ServiceInfo>
-        <ServiceInfo>
-          Current Balance: ${worker.balance !== null ? worker.balance : "0"}
-        </ServiceInfo>
-        <UpdateTip>Update Tip</UpdateTip>
-      </ServiceCardInfo>
-    </ServiceCard>
+    <>
+      <ServiceCard>
+        <ServiceCardHeader>
+          {worker.FirstName} {worker.LastName}
+        </ServiceCardHeader>
+        <ServiceCardInfo>
+          <ServiceInfo>Company: {worker.company}</ServiceInfo>
+          <ServiceInfo>Years at Company: {worker.YearsAtCompany}</ServiceInfo>
+          <ServiceInfo>Email: {worker.email}</ServiceInfo>
+          <ServiceInfo>
+            Current Balance: ${worker.balance !== null ? worker.balance : "0"}
+          </ServiceInfo>
+          <UpdateTip onClick={showModal}>Update Tip</UpdateTip>
+        </ServiceCardInfo>
+      </ServiceCard>
+      <Modal
+        show={getModal}
+        handleClose={hideModal}
+        worker={worker}
+        setServiceWorkers={setServiceWorkers}
+      >
+        <p>Modal</p>
+        <p>Data</p>
+      </Modal>
+    </>
   );
 }
 const ServiceCard = styled.div`

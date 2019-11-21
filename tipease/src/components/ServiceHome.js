@@ -16,7 +16,13 @@ export default function ServiceHome() {
       <ServiceHeader>Service Workers</ServiceHeader>
       <ServiceWorkerCardBox>
         {getServiceWorkers.map((worker, index) => {
-          return <ServiceCards worker={worker} key={index} />;
+          return (
+            <ServiceCards
+              worker={worker}
+              key={index}
+              setServiceWorkers={setServiceWorkers}
+            />
+          );
         })}
       </ServiceWorkerCardBox>
     </ServiceHomeContainer>
