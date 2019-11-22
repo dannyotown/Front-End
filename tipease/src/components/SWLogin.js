@@ -7,7 +7,7 @@ import api from "../utils/api";
 function SWLogin(props) {
   const [getLogin, setLogin] = useState({
     username: "",
-    password: "",
+    password: ""
   });
 
   const onChangeHandle = e => {
@@ -27,8 +27,8 @@ function SWLogin(props) {
         props.history.push("/swprofile");
       })
       .catch(error => {
-        console.log(error)
-        alert("Incorrect Login Credentials")
+        console.log(error);
+        alert("Incorrect Login Credentials");
       });
   };
   return (

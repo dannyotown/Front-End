@@ -1,5 +1,3 @@
-//JaxAtwood
-
 import React from "react";
 import Button from "@material-ui/core/Button";
 import Dialog from "@material-ui/core/Dialog";
@@ -7,23 +5,35 @@ import DialogActions from "@material-ui/core/DialogActions";
 import DialogContent from "@material-ui/core/DialogContent";
 import DialogContentText from "@material-ui/core/DialogContentText";
 import DialogTitle from "@material-ui/core/DialogTitle";
-import { LOButton } from "../styling/ProfileStyling";
+import { DeleteButton } from "../styling/ProfileStyling";
+import { useSelector, useDispatch } from "react-redux";
+import api from "../utils/api";
+import { SWDELETE } from "../actions/index";
 
-export default function Logout() {
+export default function DeleteAccount() {
   const [open, setOpen] = React.useState(false);
+  const User = useSelector(state => state);
+  const Dispatch = useDispatch();
 
   const handleClickOpen = () => {
     setOpen(true);
+    api()
+      .delete(`/api/serviceworker/${User.id}`)
+      .then(res => {
+        console.log(res);
+        Dispatch({ type: SWDELETE, payload: res.data });
+      })
+      .catch(err => console.log(err));
   };
 
-  const logout = e => {
+  const DeleteUser = e => {
     localStorage.clear();
     window.location.href = "/";
   };
 
   return (
     <div>
-      <LOButton onClick={handleClickOpen}>LOGOUT</LOButton>
+      <DeleteButton onClick={handleClickOpen}>DELETE ACCOUNT</DeleteButton>
       <Dialog
         open={open}
         aria-labelledby="alert-dialog-title"
@@ -32,13 +42,13 @@ export default function Logout() {
         <DialogTitle id="alert-dialog-title">{"Goodbye!"}</DialogTitle>
         <DialogContent>
           <DialogContentText id="alert-dialog-description">
-            Thanks for using TipsEase!
+            Account Deleted! Thanks for using TipsEase!
             <br />
             You will now return to the Homepage!
           </DialogContentText>
         </DialogContent>
         <DialogActions>
-          <Button onClick={logout}>X close</Button>
+          <Button onClick={DeleteUser}>X close</Button>
         </DialogActions>
       </Dialog>
     </div>
