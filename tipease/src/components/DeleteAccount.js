@@ -8,16 +8,21 @@ import DialogTitle from "@material-ui/core/DialogTitle";
 import { DeleteButton } from "../styling/ProfileStyling";
 import { useSelector, useDispatch } from "react-redux";
 import api from "../utils/api";
+import { SWDELETE } from "../actions/index";
 
 export default function DeleteAccount() {
   const [open, setOpen] = React.useState(false);
   const User = useSelector(state => state);
+  const Dispatch = useDispatch();
 
   const handleClickOpen = () => {
     setOpen(true);
     api()
       .delete(`/api/serviceworker/${User.id}`)
-      .then(res => console.log(res))
+      .then(res => {
+        console.log(res);
+        Dispatch({ type: SWDELETE, payload: res.data });
+      })
       .catch(err => console.log(err));
   };
 
