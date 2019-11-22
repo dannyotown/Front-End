@@ -9,7 +9,6 @@ function LogIn(props) {
     username: "",
     password: ""
   });
-
   const onChangeHandle = e => {
     e.preventDefault();
     setLogin({
@@ -27,8 +26,8 @@ function LogIn(props) {
         props.history.push("/profile");
       })
       .catch(error => {
-        console.log("HERE", error)
-        alert("Incorrect Login Credentials")
+        console.log("HERE", error);
+        alert("Incorrect Login Credentials");
       });
   };
   return (
